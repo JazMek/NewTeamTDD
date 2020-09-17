@@ -36,7 +36,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test(enabled = false)
     public void HomePage_Get_Title_Test() {
-        init();
+
         aaaHomePage.HomePage_Get_Title();
     }
 
@@ -46,7 +46,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test (enabled = false)
     public void HomePage_Get_Url_Test() {
-        init();
+
         aaaHomePage.HomePage_Get_Url();
     }
 
@@ -56,7 +56,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test (enabled = false)
     public void HomePage_Get_Logo_Test() {
-        init();
+
         aaaHomePage.HomePage_Get_Logo();
 
     }
@@ -66,7 +66,7 @@ public class TestAAAHomePage extends WebAPI {
      */
     @Test (enabled = false)
     public void HomePage_click_MyAccount_WebButton_Test() {
-        init();
+
         aaaHomePage.HomePage_click_MyAccount_WebButton();
 
 
@@ -77,7 +77,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test(enabled = false)
     public void HomePage_Check_Return_To_Top_Button_After_ScrollDown_Is_Displayed_Test() throws InterruptedException {
-       // init();
+
       aaaHomePage.HomePage_Check_Return_To_Top_Button_After_ScrollDown_Is_Displayed();
         sleepFor(5);
         //scrollPageDown(driver);
@@ -100,7 +100,7 @@ public class TestAAAHomePage extends WebAPI {
  // @Test(groups = {"Smoke"})
     @Test(enabled = false)
     public void HomePage_Mouse_Hover_test() throws InterruptedException {
-     // init();
+
         aaaHomePage.HomePage_Travel_Mouse_Hover();
         sleepFor(5);
         boolean Flag1=isWebElementDisplayed(driver, AAAHomePage_Hotels_button);
@@ -131,7 +131,7 @@ public class TestAAAHomePage extends WebAPI {
   //  }
 //************************************************************
 
-    public static String path="C:/Users/ssbra/Desktop/New_team_Excel.xlsx";
+    public static String path="/Users/amardjebra/Desktop/New_team_Excel.xlsx";
 
     @DataProvider
     public Object[][] getTestData2() throws IOException, InvalidFormatException {

@@ -8,7 +8,7 @@ import org.testng.Assert;
 import static aaaPages.AAAWebElements.*;
 
 public class AAAHomePage extends WebAPI {
-    public static AAAHomePage aaaHomePage;
+    public static AAAHomePage aaaHomePage  ;
     public static AAAWebElements aaaWebElements;
 
 
@@ -16,7 +16,7 @@ public class AAAHomePage extends WebAPI {
         aaaHomePage = PageFactory.initElements(driver, AAAHomePage.class);
         aaaWebElements = PageFactory.initElements(driver, AAAWebElements.class);
         setUpWindow(driver);
-        ImplicitWaitTime(3);
+       // ImplicitWaitTime(3);
         keysInput(Popup_Window_Zip_Code_Field,Zip_Code);
     }
 
