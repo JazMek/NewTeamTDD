@@ -17,7 +17,8 @@ public class TestHomePage extends WebAPI {
     public static void homePage_get_Title_Test(){
         init();
         homePage.homePage_get_Title();
-
     }
+    @Test
+    public static void homePage_get_Url_Test(){}
 
 }
