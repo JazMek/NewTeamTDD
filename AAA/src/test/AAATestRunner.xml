@@ -6,18 +6,20 @@
     <!--        <parameter name="useCloudEnv" value="true"/>-->
     <!--&lt;!&ndash;        <parameter name="cloudEnvName" value="browserstack"/>&ndash;&gt;-->
     <!--    <parameter name="cloudEnvName" value="saucelab"/>-->
-<!--            <parameter name="os" value="windows"/>-->
-    <parameter name="os" value="OS X"/>
-<!--            <parameter name="os_version" value="10"/>-->
-    <parameter name="os_version" value="Catalina"/>
+            <parameter name="os" value="windows"/>
+            <parameter name="os_version" value="10"/>
+
+    <!--    <parameter name="os" value="OS X"/>-->
+    <!--    <parameter name="os_version" value="Catalina"/>-->
+
     <parameter name="browserName" value="chrome"/>
-    <parameter name="browserVersion" value="83"/>
+    <parameter name="browserVersion" value="85"/>
     <parameter name="url" value="https://northeast.aaa.com/"/>
     <test name="AAA Home">
 
         <classes>
 
-<!--                         <class name="aaaTests.TestAAAHomePage"></class>-->
+                         <class name="aaaTests.TestAAAHomePage"></class>
 <!--                        <class name="aaaTests.TestAAADrivingSchoolPage"/>-->
             <!--            <class name="home.testhome.TestHomePage"/>-->
             <!--            <class name="home.testhome.TestHomePage"/>-->
