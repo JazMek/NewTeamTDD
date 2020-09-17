@@ -143,7 +143,7 @@ public class WebAPI {
             if (OS.equalsIgnoreCase("OS X")) {
                 System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/mac/chromedriver");
             } else if (OS.equalsIgnoreCase("Windows")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "../Generic/BrowserDriver/windows/deletedchromedriver.exe");
             }
             driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("firefox")) {
@@ -798,6 +798,12 @@ public class WebAPI {
         List<WebElement> list = webElement.findElements(By.name("alt"));
         list.addAll(webElement.findElements(By.tagName("alt")));
         return list;
+    }
+    // method to hover mouse and click
+    public static void HoverMouseAndClickt(WebDriver driver, WebElement element) {
+        Actions action= new Actions(driver);
+        action.moveToElement(element).perform();
+
     }
 }
 
