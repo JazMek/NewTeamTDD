@@ -14,12 +14,17 @@ public class TestHomePage extends WebAPI {
     public void ClassInIt(){
         init();
     }
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();
     }
+    @Test(enabled = false)
+    public static void homePage_windowPopUp_Test() throws InterruptedException {
+        homePage.homePage_windowPopUp();
+    }
     @Test
-    public static void homePage_windowPopop_Test() throws InterruptedException {
-        homePage.homePage_windowPopop();
+    public static void homePage_CreatAccount_Test() throws InterruptedException {
+      homePage.homePage_CreatAccount();
+
     }
 }
