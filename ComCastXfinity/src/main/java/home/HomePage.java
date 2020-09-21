@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import static home.XfinityWebElement.*;
-
 public class HomePage extends WebAPI {
 
     public static HomePage homePage;
