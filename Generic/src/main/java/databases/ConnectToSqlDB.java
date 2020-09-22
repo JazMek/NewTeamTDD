@@ -22,7 +22,7 @@ public class ConnectToSqlDB {
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
         //InputStream ism = new FileInputStream("/secret.properties");
-        InputStream ism = new FileInputStream("/Users/karimmekdoud/IdeaProjects/Selenium_Automation_Framework_Team4/Generic/src/main/java/secret.properties");
+        InputStream ism = new FileInputStream("Generic\\src\\main\\java\\screte.properties");
         prop.load(ism);
         ism.close();
         return prop;
@@ -306,9 +306,10 @@ public class ConnectToSqlDB {
         return list;
     }
     public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
-        List<UnitedList> list = getUnitedListFromSqlTable();
-        for(UnitedList user :list){
-            System.out.println(user.getFrom() + " " + user.getTo()+ " " + user.getMonth()+ " " + user.getAdults() + " " + user.getSeniors()+ " " + user.getChildren1()+ " " + user.getChildren2());
-        }
+//        List<UnitedList> list = getUnitedListFromSqlTable();
+//        for(UnitedList user :list){
+//            System.out.println(user.getFrom() + " " + user.getTo()+ " " + user.getMonth()+ " " + user.getAdults() + " " + user.getSeniors()+ " " + user.getChildren1()+ " " + user.getChildren2());
+//        }
+        readUserProfileFromSqlTable();
     }
 }
