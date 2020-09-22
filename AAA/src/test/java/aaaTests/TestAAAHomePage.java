@@ -36,7 +36,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test(enabled = false)
     public void HomePage_Get_Title_Test() {
-        init();
+        //init();
         aaaHomePage.HomePage_Get_Title();
     }
 
@@ -46,7 +46,7 @@ public class TestAAAHomePage extends WebAPI {
     */
     @Test (enabled = false)
     public void HomePage_Get_Url_Test() {
-        init();
+       // init();
         aaaHomePage.HomePage_Get_Url();
     }
 
@@ -141,11 +141,23 @@ public class TestAAAHomePage extends WebAPI {
         return data1;
     }
 
-    @Test (dataProvider = "getTestData2")
-
+    @Test (enabled = false,dataProvider = "getTestData2")
 
     public  void HomePage_search_box_test(String search_Words) throws InterruptedException {
 
         aaaHomePage.HomePage_search_box(search_Words);
     }
+
+    @Test
+    public void HomePage_selection_Flights_Test() throws InterruptedException {
+
+     aaaHomePage.HomePage_selection_Flights();
+
+
+
+    }
+
+
+
+
 }
