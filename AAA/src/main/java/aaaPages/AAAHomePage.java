@@ -1,6 +1,7 @@
 package aaaPages;
 
 import common.WebAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,8 +19,8 @@ public class AAAHomePage extends WebAPI {
         aaaHomePage = PageFactory.initElements(driver, AAAHomePage.class);
         aaaWebElements = PageFactory.initElements(driver, AAAWebElements.class);
         setUpWindow(driver);
-        ImplicitWaitTime(3);
-        keysInput(Popup_Window_Zip_Code_Field,Zip_Code);
+        // ImplicitWaitTime(3);
+        keysInput(Popup_Window_Zip_Code_Field, Zip_Code);
     }
 
 
@@ -32,29 +33,30 @@ public class AAAHomePage extends WebAPI {
     }
 
     public void HomePage_Get_Logo() {
-      // isWebElementDisplayed(driver,AAALogo);
-        Assert.assertTrue(isWebElementDisplayed(driver,AAALogo),"the logo is displayed ");
-        if (isWebElementDisplayed(driver,AAALogo)==true){
+        // isWebElementDisplayed(driver,AAALogo);
+        Assert.assertTrue(isWebElementDisplayed(driver, AAALogo), "the logo is displayed ");
+        if (isWebElementDisplayed(driver, AAALogo) == true) {
             System.out.println("the logo is displayed ");
 
-        }
-        else System.out.println("the logo is not displayed ");
+        } else System.out.println("the logo is not displayed ");
     }
 
     public void HomePage_click_MyAccount_WebButton() {
 
-    // clickByWebElement(AAAHomePageMyAcountclick);
+        // clickByWebElement(AAAHomePageMyAcountclick);
         AAAHomePageMyAcountclick.click();
         String ActuelResult = getCurrentPageUrl();
         String ExpectedResult = "https://nm.northeast.aaa.com/logi";
-        Assert.assertEquals(ActuelResult,ExpectedResult);
+        Assert.assertEquals(ActuelResult, ExpectedResult);
 
     }
 
     public void HomePage_Check_Return_To_Top_Button_After_ScrollDown_Is_Displayed() throws InterruptedException {
 
-        keysInput(Popup_Window_Zip_Code_Field,Zip_Code);
-       //scrollIntoView(Exclusive_Member_Discounts,driver);
+
+        keysInput(Popup_Window_Zip_Code_Field, Zip_Code);
+        //scrollIntoView(Exclusive_Member_Discounts,driver);
+
         //scrollPageDown(driver);
 //        sleepFor(15);
 //        boolean Flag1=isWebElementDisplayed(driver, Return_to_Top);
@@ -62,7 +64,7 @@ public class AAAHomePage extends WebAPI {
     }
 
     public void HomePage_Travel_Mouse_Hover() throws InterruptedException {
-        keysInput(Popup_Window_Zip_Code_Field,Zip_Code);
+        keysInput(Popup_Window_Zip_Code_Field, Zip_Code);
         sleepFor(5);
         HoverMouseAndClickt(driver, AAAHomePage_Travel_MouseHover);
     }
@@ -87,23 +89,16 @@ public class AAAHomePage extends WebAPI {
         AAAHomePage_Search_box.sendKeys(Keys.ENTER);
         sleepFor(5);
     }
-
-
     public void HomePage_selection_Flights() throws InterruptedException {
         sleepFor(5);
-       scrollIntoView(AAAHomePage_Fall_intoSaving, driver);
+        scrollIntoView(AAAHomePage_Fall_intoSaving, driver);
         AAAHomePage_Flight_button.click();
         AAAHomePage_oneWay_Check_box.click();
-      //  sleepFor(2);
-      // AAAHomePage_from.click();
-       sleepFor(3);
+        AAAHomePage_from.click();
         AAAHomePage_from.sendKeys("New York, NY");
-      // AAAHomePage_To.click();
         AAAHomePage_To.sendKeys("Columbus, OH");
-        sleepFor(5);
-
-
-
-
+        AAAHomePage_calander.click();
+        sleepFor(20);
+        AAAHomePage_search.click();
     }
-}
+    }

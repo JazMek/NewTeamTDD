@@ -5,7 +5,9 @@
 
 
         <classes>
-            <class name="aaaTests.TestAAAHomePage"></class>
+            <class name="aaaTests.TestAAAHomePage">
+
+            </class>
         </classes>
     </test>
 </suite>
