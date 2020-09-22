@@ -5,6 +5,7 @@
 <suite name="AAA Automation Script" verbose="2" parallel="false">
     <!--        <parameter name="useCloudEnv" value="true"/>-->
     <!--&lt;!&ndash;        <parameter name="cloudEnvName" value="browserstack"/>&ndash;&gt;-->
+<<<<<<< HEAD:AAA/src/test/AAATestRunner.xml
     <!--    <parameter name="cloudEnvName" value="saucelab"/>-->
             <parameter name="os" value="windows"/>
             <parameter name="os_version" value="10"/>
@@ -12,6 +13,13 @@
     <!--    <parameter name="os" value="OS X"/>-->
     <!--    <parameter name="os_version" value="Catalina"/>-->
 
+=======
+    <!--        <parameter name="cloudEnvName" value="saucelab"/>-->
+<!--    <parameter name="os" value="windows"/>-->
+        <parameter name="os" value="OS X"/>
+<!--    <parameter name="os_version" value="10"/>-->
+        <parameter name="os_version" value="Catalina"/>
+>>>>>>> master:AAA/src/test/resources/AAATestRunner.xml
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="85"/>
     <parameter name="url" value="https://northeast.aaa.com/"/>
@@ -19,8 +27,13 @@
 
         <classes>
 
+<<<<<<< HEAD:AAA/src/test/AAATestRunner.xml
                          <class name="aaaTests.TestAAAHomePage"></class>
 <!--                        <class name="aaaTests.TestAAADrivingSchoolPage"/>-->
+=======
+            <class name="aaaTests.TestAAAHomePage"></class>
+            <!--                        <class name="aaaTests.TestAAADrivingSchoolPage"/>-->
+>>>>>>> master:AAA/src/test/resources/AAATestRunner.xml
             <!--            <class name="home.testhome.TestHomePage"/>-->
             <!--            <class name="home.testhome.TestHomePage"/>-->
             <!--            <class name="home.testhome.TestHomePage"/>-->
