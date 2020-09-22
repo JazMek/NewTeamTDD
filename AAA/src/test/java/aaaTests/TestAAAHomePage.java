@@ -133,7 +133,7 @@ public class TestAAAHomePage extends WebAPI {
     //  }
 //************************************************************
 
-   /* public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
+   public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
 
     @DataProvider
     public Object[][] getTestData2() throws IOException, InvalidFormatException {
@@ -143,17 +143,17 @@ public class TestAAAHomePage extends WebAPI {
         return data1;
     }
 
+
     @Test(enabled = false ,dataProvider = "getTestData2")
 
 
     public void HomePage_search_box_test(String search_Words) throws InterruptedException {
 
         aaaHomePage.HomePage_search_box(search_Words);
-    }*/
 
+    }
     @Test
     public void HomePage_selection_Flights_Test() throws InterruptedException {
-
         aaaHomePage.HomePage_selection_Flights();
     }
 }

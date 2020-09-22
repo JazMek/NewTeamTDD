@@ -53,7 +53,9 @@ public class AAAWebElements {
     @FindBy(how= How.XPATH, using=AAAHomePage_Search_boxXP)
     public static WebElement AAAHomePage_Search_box;
 
-    //**************************************************************
+
+    //*************************Amar*************************************
+
     public static final String AAAHomePage_Fall_intoSavingXP="//div[@class='col-md-3 col-sm-6 col-xs-6 mbox-name-offerrow_homepage_box2 at-element-click-tracking at-element-marker']//img[@class='img-responsive']";
     @FindBy(how= How.XPATH, using=AAAHomePage_Fall_intoSavingXP)
     public static WebElement AAAHomePage_Fall_intoSaving;
