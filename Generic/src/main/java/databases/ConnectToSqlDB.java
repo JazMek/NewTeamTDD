@@ -23,12 +23,11 @@ public class ConnectToSqlDB {
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
         //InputStream ism = new FileInputStream("/secret.properties");
-        InputStream ism = new FileInputStream("C:\\Users\\ssbra\\IdeaProjects\\Selenium_Automation_Framework_Team4\\Generic\\src\\main\\java\\secret.properties");
+        InputStream ism = new FileInputStream("Generic\\src\\main\\java\\screte.properties");
         prop.load(ism);
         ism.close();
         return prop;
     }
-
     public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
         Properties prop = loadProperties();
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
@@ -234,13 +233,13 @@ public class ConnectToSqlDB {
         return list;
     }
 
-    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
-        List<User> list = readUserProfileFromSqlTable();
-        for(User user:list){
-            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
-        }
+//    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
+//        List<User> list = readUserProfileFromSqlTable();
+//        for(User user:list){
+//            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
+//        }
 
-    }
+//    }
 
 
 
@@ -319,10 +318,14 @@ public class ConnectToSqlDB {
         return list;
     }
 //    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
+//    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
 //        List<UnitedList> list = getUnitedListFromSqlTable();
 //        for(UnitedList user :list){
 //            System.out.println(user.getFrom() + " " + user.getTo()+ " " + user.getMonth()+ " " + user.getAdults() + " " + user.getSeniors()+ " " + user.getChildren1()+ " " + user.getChildren2());
 //        }
+
+//        readUserProfileFromSqlTable();
+    }
+
 //    }
 
-}
