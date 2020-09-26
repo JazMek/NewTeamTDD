@@ -136,6 +136,7 @@ public class TestAAAHomePage extends WebAPI {
     public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
 
 
+
          @DataProvider
          public Object[][] getTestData2() throws IOException, InvalidFormatException {
 
@@ -145,13 +146,13 @@ public class TestAAAHomePage extends WebAPI {
          }
 
          @Test(enabled = false,dataProvider = "getTestData2")
-
-
          public void HomePage_search_box_test(String search_Words,String expectedsearchResult) throws InterruptedException {
              aaaHomePage.HomePage_search_box(search_Words);
            String actualResult =  AAAHomePage_Atualresulsearcht.getText();
              Assert.assertEquals(expectedsearchResult,actualResult);
          }
+
+
     @DataProvider
     public Object[][] getTestData3() throws IOException, InvalidFormatException {
 

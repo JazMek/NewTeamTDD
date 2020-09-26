@@ -53,7 +53,7 @@ public class AAAWebElements {
     @FindBy(how= How.XPATH, using=AAAHomePage_Search_boxXP)
     public static WebElement AAAHomePage_Search_box;
 
-    //**************************************************************
+
     public static final String AAAHomePage_Fall_intoSavingXP="//span[@class='offer-text']";
     @FindBy(how= How.XPATH, using=AAAHomePage_Fall_intoSavingXP)
     public static WebElement AAAHomePage_Fall_intoSaving;

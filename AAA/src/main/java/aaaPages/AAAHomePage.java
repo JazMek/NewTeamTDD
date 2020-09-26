@@ -3,6 +3,8 @@ package aaaPages;
 import common.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -52,8 +54,10 @@ public class AAAHomePage extends WebAPI {
 
     public void HomePage_Check_Return_To_Top_Button_After_ScrollDown_Is_Displayed() throws InterruptedException {
 
+
         keysInput(Popup_Window_Zip_Code_Field, Zip_Code);
         //scrollIntoView(Exclusive_Member_Discounts,driver);
+
         //scrollPageDown(driver);
 //        sleepFor(15);
 //        boolean Flag1=isWebElementDisplayed(driver, Return_to_Top);
@@ -89,6 +93,7 @@ public class AAAHomePage extends WebAPI {
 
 
     public void HomePage_selection_Flights(String from,String to,String departur_date,String return_date,String adult_number) throws InterruptedException {
+
         sleepFor(5);
         scrollIntoView(AAAHomePage_Fall_intoSaving, driver);
         AAAHomePage_Flight_button.click();
@@ -103,8 +108,5 @@ public class AAAHomePage extends WebAPI {
         adulte.selectByVisibleText(adult_number);
         AAAHomePage_adult.sendKeys(Keys.ENTER);
         AAAHomePage_search.click();
-
     }
-
-
-}
+    }
