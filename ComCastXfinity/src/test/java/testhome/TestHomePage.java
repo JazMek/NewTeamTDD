@@ -11,31 +11,22 @@ import static home.HomePage.*;
 public class TestHomePage extends WebAPI {
 
     @BeforeMethod
-<<<<<<< HEAD
-    public void ClassInIt(){ init();}
-    @Test
-=======
     public void ClassInIt(){
         init();
     }
     @Test(enabled = false)
->>>>>>> master
+
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();
     }
-<<<<<<< HEAD
      @Test(enabled = false)
     public static void homePage_Logo_display_Test(){
-         init();
-         homePage.homePage_Logo_display();
+        homePage.homePage_Logo_display();
      }
      @Test
      public static void homePage_changePlanLink_Test(){
-            init();
             homePage.changePlanLink();
      }
-
-=======
     @Test
     public static void homePage_get_Url_Test(){}
     @Test(enabled = false)
@@ -46,5 +37,5 @@ public class TestHomePage extends WebAPI {
     public static void homePage_CreatAccount_Test() throws InterruptedException {
       homePage.homePage_CreatAccount();
     }
->>>>>>> master
+
 }
