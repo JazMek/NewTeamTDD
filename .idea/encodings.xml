@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <file url="file://$PROJECT_DIR$/AAA/src/main/java" charset="UTF-8" />
+=======
+>>>>>>> master
+>>>>>>> c5eb9e22160e4efcba467e9112d30b124e7e5df1
     <file url="file://$PROJECT_DIR$/ComCastXfinity/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Generic/src/main/java" charset="UTF-8" />
   </component>
