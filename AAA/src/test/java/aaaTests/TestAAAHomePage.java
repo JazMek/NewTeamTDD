@@ -133,27 +133,38 @@ public class TestAAAHomePage extends WebAPI {
     //  }
 //************************************************************
 
-   /* public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
+    public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
 
+
+         @DataProvider
+         public Object[][] getTestData2() throws IOException, InvalidFormatException {
+
+             Object data1[][] = DataReader.fileReader3("Sheet1", path);
+
+             return data1;
+         }
+
+         @Test(enabled = false,dataProvider = "getTestData2")
+
+
+         public void HomePage_search_box_test(String search_Words,String expectedsearchResult) throws InterruptedException {
+             aaaHomePage.HomePage_search_box(search_Words);
+           String actualResult =  AAAHomePage_Atualresulsearcht.getText();
+             Assert.assertEquals(expectedsearchResult,actualResult);
+         }
     @DataProvider
-    public Object[][] getTestData2() throws IOException, InvalidFormatException {
+    public Object[][] getTestData3() throws IOException, InvalidFormatException {
 
-        Object data1[][] = DataReader.fileReader3("Sheet1", path);
+        Object data1[][] = DataReader.fileReader4(path,"Sheet2");
 
         return data1;
     }
 
-    @Test(enabled = false ,dataProvider = "getTestData2")
+    @Test(enabled = true,dataProvider = "getTestData3")
+    public void HomePage_selection_Flights_Test(String from, String to, String departur_date, String return_date, String adult_number) throws InterruptedException {
 
-
-    public void HomePage_search_box_test(String search_Words) throws InterruptedException {
-
-        aaaHomePage.HomePage_search_box(search_Words);
-    }*/
-
-    @Test
-    public void HomePage_selection_Flights_Test() throws InterruptedException {
-
-        aaaHomePage.HomePage_selection_Flights();
+        aaaHomePage.HomePage_selection_Flights(from, to, departur_date, return_date, adult_number);
     }
 }
+
+

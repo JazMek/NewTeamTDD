@@ -12,9 +12,7 @@ import static home.HomePage.*;
 public class TestHomePage extends WebAPI {
 
     @BeforeMethod
-    public void ClassInIt(){
-        init();
-    }
+    public void ClassInIt(){ init();}
     @Test
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();

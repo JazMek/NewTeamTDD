@@ -4,6 +4,7 @@ import common.WebAPI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import static aaaPages.AAAWebElements.*;
@@ -83,20 +84,24 @@ public class AAAHomePage extends WebAPI {
         AAAHomePage_Search_box.sendKeys(search_Words);
         sleepFor(3);
         AAAHomePage_Search_box.sendKeys(Keys.ENTER);
-        sleepFor(5);
+        sleepFor(3);
     }
 
 
-    public void HomePage_selection_Flights() throws InterruptedException {
+    public void HomePage_selection_Flights(String from,String to,String departur_date,String return_date,String adult_number) throws InterruptedException {
         sleepFor(5);
         scrollIntoView(AAAHomePage_Fall_intoSaving, driver);
         AAAHomePage_Flight_button.click();
-        AAAHomePage_oneWay_Check_box.click();
+        //AAAHomePage_oneWay_Check_box.click();
         AAAHomePage_from.click();
-        AAAHomePage_from.sendKeys("New York, NY");
-        AAAHomePage_To.sendKeys("Columbus, OH");
-        AAAHomePage_calander.click();
-        sleepFor(20);
+        AAAHomePage_from.sendKeys(from);
+        AAAHomePage_To.sendKeys(to);
+        AAAHomePage_Departing.sendKeys(departur_date);
+        AAAHomePage_Returning.sendKeys(return_date);
+        AAAHomePage_adult.click();
+        Select adulte = new Select(AAAHomePage_adult);
+        adulte.selectByVisibleText(adult_number);
+        AAAHomePage_adult.sendKeys(Keys.ENTER);
         AAAHomePage_search.click();
 
     }
