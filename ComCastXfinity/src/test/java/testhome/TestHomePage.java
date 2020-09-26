@@ -11,10 +11,15 @@ import static home.HomePage.*;
 public class TestHomePage extends WebAPI {
 
     @BeforeMethod
+<<<<<<< HEAD
+    public void ClassInIt(){ init();}
+    @Test
+=======
     public void ClassInIt(){
         init();
     }
     @Test(enabled = false)
+>>>>>>> master
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();
     }

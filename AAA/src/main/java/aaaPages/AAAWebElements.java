@@ -54,35 +54,39 @@ public class AAAWebElements {
     public static WebElement AAAHomePage_Search_box;
 
 
-    //*************************Amar*************************************
-
-    public static final String AAAHomePage_Fall_intoSavingXP="//div[@class='col-md-3 col-sm-6 col-xs-6 mbox-name-offerrow_homepage_box2 at-element-click-tracking at-element-marker']//img[@class='img-responsive']";
+    public static final String AAAHomePage_Fall_intoSavingXP="//span[@class='offer-text']";
     @FindBy(how= How.XPATH, using=AAAHomePage_Fall_intoSavingXP)
     public static WebElement AAAHomePage_Fall_intoSaving;
 
-    public static final String AAAHomePage_Flight_buttonXP="//p[contains(text(),'Flights')]";
+    public static final String AAAHomePage_Flight_buttonXP="//span[contains(text(),'Flights')]";
     @FindBy(how= How.XPATH, using=AAAHomePage_Flight_buttonXP)
     public static WebElement AAAHomePage_Flight_button;
 
-    public static final String AAAHomePage_oneWay_Check_boxXP="//label[@class='rs_air_type']//i";
-    @FindBy(how= How.XPATH, using=AAAHomePage_oneWay_Check_boxXP)
-    public static WebElement AAAHomePage_oneWay_Check_box;
+//    public static final String AAAHomePage_currant_dateXP="//a[@class='ui-state-default ui-state-highlight ui-state-active']";
+//    @FindBy(how= How.XPATH, using=AAAHomePage_currant_dateXP)
+//    public static WebElement AAAHomePage_currant_date;
 
 
-    public static final String AAAHomePage_fromXP="//input[contains(@name,'rs_o_city1')]";
+    public static final String AAAHomePage_fromXP="//input[contains(@class,'departure-from ui-autocomplete-input')]";
     @FindBy(how= How.XPATH, using= AAAHomePage_fromXP)
     public static WebElement AAAHomePage_from;
 
-    public static final String AAAHomePage_ToXP="//input[contains(@name,'rs_d_city1')]";
+    public static final String AAAHomePage_ToXP="//input[contains(@class,'departure-to ui-autocomplete-input')]";
     @FindBy(how= How.XPATH, using=AAAHomePage_ToXP)
     public static WebElement AAAHomePage_To;
-    public static final String AAAHomePage_calanderXP="//input[contains(@name,'rs_chk_in1')]";
-    @FindBy(how= How.XPATH, using=AAAHomePage_calanderXP)
-    public static WebElement AAAHomePage_calander;
-
-
-    public static final String AAAHomePage_searchXP="//input[contains(@name,'rs_d_city1')]";
+    public static final String AAAHomePage_DepartingXP="//input[contains(@class,'departure-from tst-start-date hasDatepicker')]";
+    @FindBy(how= How.XPATH, using=AAAHomePage_DepartingXP)
+    public static WebElement AAAHomePage_Departing;
+    public static final String AAAHomePage_ReturningXP="//input[contains(@class,'departure-to tst-end-date hasDatepicker')]";
+    @FindBy(how= How.XPATH, using=AAAHomePage_ReturningXP)
+    public static WebElement AAAHomePage_Returning;
+    public static final String AAAHomePage_adultXP="//select[@name='a']";
+    @FindBy(how= How.XPATH, using=AAAHomePage_adultXP)
+    public static WebElement AAAHomePage_adult;
+    public static final String AAAHomePage_searchXP="//div[6]//div[1]//button[1]";
     @FindBy(how= How.XPATH, using=AAAHomePage_searchXP)
     public static WebElement AAAHomePage_search;
-
+    public static final String AAAHomePage_AtualresulsearchtXP="//span[@class='st-ui-search-summary-query']";
+    @FindBy(how= How.XPATH, using= AAAHomePage_AtualresulsearchtXP)
+    public static WebElement AAAHomePage_Atualresulsearcht;
 }

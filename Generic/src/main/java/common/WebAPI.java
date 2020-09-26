@@ -19,6 +19,7 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import reporting.ApplicationLog;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 
@@ -46,6 +47,7 @@ public class WebAPI {
     public void extentSetup(ITestContext context) {
         ExtentManager.setOutputDirectory(context);
         extent = ExtentManager.getInstance();
+
     }
 
     @BeforeMethod
