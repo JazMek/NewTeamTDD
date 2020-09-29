@@ -11,11 +11,5 @@
         <module name="ComCastXfinity" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="AAA" target="1.8" />
-      <module name="ComCastXfinity" target="1.8" />
-      <module name="Generic" target="1.8" />
-      <module name="NewTeamTDD" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

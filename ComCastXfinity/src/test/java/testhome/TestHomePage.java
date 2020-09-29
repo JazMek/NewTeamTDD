@@ -19,6 +19,7 @@ public class TestHomePage extends WebAPI {
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();
     }
+  
      @Test(enabled = false)
     public static void homePage_Logo_display_Test(){
         homePage.homePage_Logo_display();
@@ -27,6 +28,7 @@ public class TestHomePage extends WebAPI {
      public static void homePage_changePlanLink_Test(){
             homePage.changePlanLink();
      }
+
     @Test
     public static void homePage_get_Url_Test(){}
     @Test(enabled = false)

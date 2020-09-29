@@ -109,4 +109,22 @@ public class AAAHomePage extends WebAPI {
         AAAHomePage_adult.sendKeys(Keys.ENTER);
         AAAHomePage_search.click();
     }
+
+    public void HomePage_SearchData_Base(String search_Words) throws InterruptedException {
+        AAAHomePage_Search_box.click();
+        AAAHomePage_Search_box.sendKeys(search_Words);
+        sleepFor(3);
+        AAAHomePage_Search_box.sendKeys(Keys.ENTER);
+        sleepFor(3);
     }
+    public void HomePage_SearchData_Validation_Base(String search_Words, String expectedsearchResult) throws InterruptedException {
+        AAAHomePage_Search_box.click();
+        sleepFor(3);
+        AAAHomePage_Search_box.sendKeys(search_Words);
+        sleepFor(3);
+        AAAHomePage_Search_box.sendKeys(Keys.ENTER);
+        sleepFor(3);
+        String actualResult =  AAAHomePage_Atualresulsearcht.getText();
+        Assert.assertEquals(expectedsearchResult,actualResult);
+    }
+}

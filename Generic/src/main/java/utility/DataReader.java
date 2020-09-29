@@ -361,19 +361,4 @@ return list;
         }
         return list;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

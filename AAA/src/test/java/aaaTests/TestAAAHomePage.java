@@ -1,25 +1,22 @@
 package aaaTests;
 
-import aaaPages.AAAHomePage;
-import aaaPages.AAAWebElements;
 import common.WebAPI;
 
+import databases.AaaSearch;
+import databases.ConnectToSqlDB;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.internal.annotations.IBeforeMethod;
 import utility.DataReader;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 
 import static aaaPages.AAAHomePage.*;
-import static aaaPages.AAAWebElements.Popup_Window_Zip_Code_Field;
 import static aaaPages.AAAWebElements.*;
 
 public class TestAAAHomePage extends WebAPI {
@@ -136,35 +133,72 @@ public class TestAAAHomePage extends WebAPI {
     public static String path = "/Users/amardjebra/Desktop/New_team_Excel.xlsx";
 
 
+    @DataProvider
+    public Object[][] getTestData2() throws IOException, InvalidFormatException {
 
-         @DataProvider
-         public Object[][] getTestData2() throws IOException, InvalidFormatException {
+        Object data1[][] = DataReader.fileReader3("Sheet1", path);
 
-             Object data1[][] = DataReader.fileReader3("Sheet1", path);
+        return data1;
+    }
 
-             return data1;
-         }
-
-         @Test(enabled = false,dataProvider = "getTestData2")
-         public void HomePage_search_box_test(String search_Words,String expectedsearchResult) throws InterruptedException {
-             aaaHomePage.HomePage_search_box(search_Words);
-           String actualResult =  AAAHomePage_Atualresulsearcht.getText();
-             Assert.assertEquals(expectedsearchResult,actualResult);
-         }
+    @Test(enabled = false, dataProvider = "getTestData2")
+    public void HomePage_search_box_test(String search_Words, String expectedsearchResult) throws InterruptedException {
+        aaaHomePage.HomePage_search_box(search_Words);
+        String actualResult = AAAHomePage_Atualresulsearcht.getText();
+        Assert.assertEquals(expectedsearchResult, actualResult);
+    }
 
 
     @DataProvider
     public Object[][] getTestData3() throws IOException, InvalidFormatException {
 
-        Object data1[][] = DataReader.fileReader4(path,"Sheet2");
+        Object data1[][] = DataReader.fileReader4(path, "Sheet2");
 
         return data1;
     }
 
-    @Test(enabled = true,dataProvider = "getTestData3")
+    @Test(enabled = false, dataProvider = "getTestData3")
     public void HomePage_selection_Flights_Test(String from, String to, String departur_date, String return_date, String adult_number) throws InterruptedException {
 
         aaaHomePage.HomePage_selection_Flights(from, to, departur_date, return_date, adult_number);
+    }
+
+    @DataProvider
+    public Object[] getTestdataBase() throws Exception {
+        Object[] data2 = ConnectToSqlDB.readDataBase("AAAsearch", "search_Words").toArray();
+        return data2;
+    }
+
+
+    @Test(enabled = false, dataProvider = "getTestdataBase")
+    public void HomePage_SearchData_Base_Test(String search_Words) throws Exception {
+        aaaHomePage.HomePage_SearchData_Base(search_Words);
+    }
+
+    @DataProvider
+    public Object[][] getTestdataBase2D() throws Exception {
+        List<AaaSearch> dataList = ConnectToSqlDB.getUnitedListFromSqlTableArryAAA();
+        int columnNum = 2;
+        Object[][] dataArray = new Object[dataList.size()][columnNum];
+        for (int i = 0; i < dataList.size(); i++) {
+            dataArray[i] = new Object[columnNum];
+        }
+        for (int i = 0; i < dataList.size(); i++) {
+            for (int j = 0; j < columnNum; j++) {
+                if (j == 0) dataArray[i][j] = dataList.get(i).getSearch_Words();
+                if (j == 1) dataArray[i][j] = dataList.get(i).getExpectedsearchResult();
+
+            }
+        }
+
+        return dataArray;
+    }
+
+    @Test(dataProvider = "getTestdataBase2D")
+    public void HomePage_SearchData_Validate_Base_Test(String search_Words, String expectedsearchResult) throws Exception {
+        aaaHomePage.HomePage_SearchData_Validation_Base(search_Words, expectedsearchResult);
+        String actualResult = AAAHomePage_Atualresulsearcht.getText();
+        Assert.assertEquals(expectedsearchResult, actualResult);
     }
 }
 
