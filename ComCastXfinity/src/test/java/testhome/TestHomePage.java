@@ -11,7 +11,6 @@ import static home.HomePage.*;
 public class TestHomePage extends WebAPI {
 
     @BeforeMethod
-
     public void ClassInIt(){
         init();
     }
@@ -20,15 +19,13 @@ public class TestHomePage extends WebAPI {
     public static void homePage_get_Title_Test(){
         homePage.homePage_get_Title();
     }
-
+  
      @Test(enabled = false)
     public static void homePage_Logo_display_Test(){
-
-         homePage.homePage_Logo_display();
+        homePage.homePage_Logo_display();
      }
      @Test
-     public static void homePage_changePlanLink_Test() throws InterruptedException {
-
+     public static void homePage_changePlanLink_Test(){
             homePage.changePlanLink();
      }
 
@@ -42,4 +39,5 @@ public class TestHomePage extends WebAPI {
     public static void homePage_CreatAccount_Test() throws InterruptedException {
       homePage.homePage_CreatAccount();
     }
+
 }

@@ -40,8 +40,8 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <suiteXmlFiles>
                         <suiteXmlFiles>target/test-classes/AAAtestng.xml</suiteXmlFiles>
-                        <suiteXmlFile>target/test-classes/AAATestRunner.xml</suiteXmlFile>
-                        <suiteXmlFile>target/test-classes/AAASmokeTests.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>target/test-classes/AAATestRunner.xml</suiteXmlFile>-->
+<!--                        <suiteXmlFile>target/test-classes/AAASmokeTests.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

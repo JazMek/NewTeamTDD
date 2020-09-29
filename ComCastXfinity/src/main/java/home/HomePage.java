@@ -1,8 +1,13 @@
 package home;
 
 import common.WebAPI;
+
+import static home.XfinityWebElement.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import static home.XfinityWebElement.*;
+import static home.XfinityWebElement.XfinityWebElement.*;
 
 public class HomePage extends WebAPI {
 
@@ -18,7 +23,6 @@ public class HomePage extends WebAPI {
     public void homePage_get_Title() {
         getTitle("Access My Account | Email | Online News | My Xfinity®");
     }
-
     /**
      * homePage_Logo
      */
@@ -26,15 +30,11 @@ public class HomePage extends WebAPI {
         boolean logo = homePage_logo.isDisplayed();
         System.out.println("the logo is displayed : " + logo);
     }
+    public void changePlanLink() {
+        clickOnElement(homePage_changePlanLink_XP,driver);}
+    public void homePage_windowPopUp() throws InterruptedException {
+        //sleepFor(2);
 
-    public void changePlanLink() throws InterruptedException {
-        clickOnElement(homePage_changePlanLink_XP, driver);
-
-
-        }
-
-    public void homePage_windowPopUp () throws InterruptedException {
-        sleepFor(2);
         homePage_windowPopUp.click();
     }
         public void homePage_CreatAccount () throws InterruptedException {
