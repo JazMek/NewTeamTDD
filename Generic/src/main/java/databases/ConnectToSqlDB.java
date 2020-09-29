@@ -20,14 +20,16 @@ public class ConnectToSqlDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
+
     public static Properties loadProperties() throws IOException {
         Properties prop = new Properties();
         //InputStream ism = new FileInputStream("/secret.properties");
-        InputStream ism = new FileInputStream("Generic\\src\\main\\java\\screte.properties");
+        InputStream ism = new FileInputStream("/Users/amardjebra/IdeaProjects/NewTeamTDD/Generic/src/main/java/screte.properties");
         prop.load(ism);
         ism.close();
         return prop;
     }
+
     public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException {
         Properties prop = loadProperties();
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
@@ -39,8 +41,15 @@ public class ConnectToSqlDB {
         System.out.println("Database is connected");
         return connect;
     }
+//    public static void main(String[] args) throws Exception {
+//        List<String> list = readDataBase("AAAsearch ", "search_Words");
+//        for(String use:list){
+//            System.out.println(use);
+//        }
+//
+//    }
 
-    public List<String> readDataBase(String tableName, String columnName)throws Exception {
+    public static List<String> readDataBase(String tableName, String columnName)throws Exception {
         List<String> data = new ArrayList<String>();
 
         try {
@@ -56,7 +65,7 @@ public class ConnectToSqlDB {
         return data;
     }
 
-    private void close() {
+    private static void close() {
         try{
             if(resultSet != null){
                 resultSet.close();
@@ -71,8 +80,41 @@ public class ConnectToSqlDB {
 
         }
     }
+//    public List<String> readDataBase(String tableName, String columnName)throws Exception {
+//        List<String> data = new ArrayList<String>();
+//
+//        try {
+//            connectToSqlDatabase();
+//            statement = connect.createStatement();
+//            resultSet = statement.executeQuery("select * from " + tableName);
+//            data = getResultSetData(resultSet, columnName);
+//        } catch (ClassNotFoundException e) {
+//            throw e;
+//        }finally{
+//            close();
+//        }
+//        return data;
+//    }
+//
+//    private void close() {
+//        try{
+//            if(resultSet != null){
+//                resultSet.close();
+//            }
+//            if(statement != null){
+//                statement.close();
+//            }
+//            if(connect != null){
+//                connect.close();
+//            }
+//        }catch(Exception e){
+//
+//        }
+//    }
 
-    private List<String> getResultSetData(ResultSet resultSet, String columnName) throws SQLException {
+
+
+    private static List<String> getResultSetData(ResultSet resultSet, String columnName) throws SQLException {
         List<String> dataList = new ArrayList<String>();
         while(resultSet.next()){
             String itemName = resultSet.getString(columnName);
@@ -238,7 +280,7 @@ public class ConnectToSqlDB {
 //        for(User user:list){
 //            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
 //        }
-
+//
 //    }
 
 
@@ -286,6 +328,34 @@ public class ConnectToSqlDB {
 
 
 
+    public static List<AaaSearch> getUnitedListFromSqlTableArryAAA()throws IOException, SQLException, ClassNotFoundException {
+        List<AaaSearch> list = new ArrayList<>();
+        AaaSearch user1 = null;
+        try{
+            Connection conn = connectToSqlDatabase();
+            String query = "SELECT * FROM AAAsearch";
+            // create the java statement
+            Statement st = conn.createStatement();
+            // execute the query, and get a java resultset
+            ResultSet rs = st.executeQuery(query);
+            // iterate through the java resultset
+            while (rs.next())
+            {
+                String search = rs.getString("search_Words");
+                String expectedR = rs.getString("expectedsearchResult");
+                user1= new AaaSearch(search ,expectedR);
+                list.add(user1);
+
+            }
+            st.close();
+        }catch (Exception e){
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+        return list;
+    }
+
+
     public static List<UnitedList> getUnitedListFromSqlTableArry()throws IOException, SQLException, ClassNotFoundException {
         List<UnitedList> list = new ArrayList<>();
         UnitedList user1 = null;
@@ -317,6 +387,15 @@ public class ConnectToSqlDB {
         }
         return list;
     }
+
+
+
+
+
+
+
+
+
 //    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
 //    public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
 //        List<UnitedList> list = getUnitedListFromSqlTable();
@@ -326,6 +405,9 @@ public class ConnectToSqlDB {
 
 //        readUserProfileFromSqlTable();
     }
+
+
+
 
 //    }
 

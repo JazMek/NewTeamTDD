@@ -3,7 +3,6 @@ package home;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-<<<<<<< HEAD
 
 public class XfinityWebElement {
 
@@ -17,12 +16,6 @@ public class XfinityWebElement {
     @FindBy(how= How.XPATH,name= homePage_changePlanLink_XP)
     public static WebElement homePage_changePlanLink;
 
-
-
-=======
->>>>>>> master
-
-public class XfinityWebElement {
     static  final String homePage_windowPopUp_XP = "//button[@class='xc-toast--close']";
       @FindBy(how = How.XPATH,using = homePage_windowPopUp_XP)
     public static WebElement homePage_windowPopUp ;

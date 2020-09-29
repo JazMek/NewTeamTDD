@@ -6,6 +6,9 @@
 /bin/
 .idea
 .classpath
+*.xml
+*.properties
+
 
 
 
